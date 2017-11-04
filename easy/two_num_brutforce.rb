@@ -8,7 +8,6 @@ class TwoNum
     def do(nums, target)
       indeces = [nil, nil]
       nums.each.with_index do |val, index|
-        next if val > target
         indeces[0] = index
         leftover = target - val
         second_index = nums.find_index(leftover)
@@ -18,9 +17,9 @@ class TwoNum
           next
         end
       end
-      puts indeces.inspect
+      indeces
     end
   end  
 end
 
-TwoNum.do(nums, target)
+puts TwoNum.do(nums, target).inspect
